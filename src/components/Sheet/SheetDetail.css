@@ -1,0 +1,299 @@
+/* src/pages/Sheets/components/SheetDetail/SheetDetail.css */
+.sheet-detail {
+  padding: 1rem 0;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.sheet-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.privacy-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.privacy-btn.public {
+  background-color: var(--success);
+  color: white;
+  border-color: var(--success);
+}
+
+.privacy-btn.private {
+  background-color: var(--secondary);
+  color: var(--text-secondary);
+}
+
+.sheet-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: var(--primary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.sheet-identity h1 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+  font-size: 2.5rem;
+}
+
+.sheet-class-origin {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.class-badge, .origin-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.class-badge {
+  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  color: white;
+}
+
+.origin-badge {
+  background: var(--secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.sheet-player {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.sheet-level {
+  display: flex;
+  align-items: center;
+}
+
+.level-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+}
+
+.level-number {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.status-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-item {
+  background: var(--primary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.status-label {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.status-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.status-bar {
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.status-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.status-fill.health {
+  background: linear-gradient(90deg, #f85149, #db6d28);
+}
+
+.status-fill.sanity {
+  background: linear-gradient(90deg, #58a6ff, #8b5cf6);
+}
+
+.status-fill.pe {
+  background: linear-gradient(90deg, #3fb950, #2ea043);
+}
+
+.sheet-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--primary);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.tab-content {
+  background: var(--primary);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.tab-content h3 {
+  margin-top: 0;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.attribute-card {
+  background: var(--secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.attribute-name {
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.attribute-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.bio-section {
+  margin-bottom: 2rem;
+}
+
+.bio-section h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bio-section p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 1rem;
+  background: var(--secondary);
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+}
+
+@media (max-width: 768px) {
+  .sheet-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .sheet-class-origin {
+    justify-content: center;
+  }
+  
+  .status-overview {
+    grid-template-columns: 1fr;
+  }
+  
+  .sheet-tabs {
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+  
+  .attributes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

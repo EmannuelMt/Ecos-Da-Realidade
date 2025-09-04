@@ -1,0 +1,45 @@
+/* pages/Discord/Discord.css */
+.discord-content {
+  text-align: center;
+}
+
+.discord-header {
+  margin-bottom: 3rem;
+}
+
+.discord-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.discord-btn {
+  background-color: #5865F2;
+  margin-top: 1rem;
+}
+
+.discord-btn:hover {
+  background-color: #4752c4;
+}
+
+.discord-features {
+  margin-top: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.feature-card h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}

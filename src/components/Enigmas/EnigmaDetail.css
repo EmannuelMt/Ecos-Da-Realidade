@@ -1,0 +1,144 @@
+/* pages/Enigmas/components/EnigmaDetail.css */
+.enigma-detail {
+  padding: 1rem 0;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.enigma-detail-card {
+  background-color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.enigma-detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent), #8b5cf6);
+}
+
+.enigma-detail-header {
+  margin-bottom: 2rem;
+}
+
+.enigma-detail-header h2 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.enigma-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.enigma-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.enigma-description h3, .solution-section h3, .enigma-result h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.enigma-description p {
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.answer-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.answer-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--secondary);
+  color: var(--text-primary);
+}
+
+.submit-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled):hover {
+  background-color: #388bfd;
+}
+
+.feedback {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: var(--secondary);
+  border-left: 4px solid var(--accent);
+}
+
+.attempts-info {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.enigma-result {
+  padding: 1.5rem;
+  background-color: var(--secondary);
+  border-radius: 8px;
+  border-left: 4px solid var(--success);
+}
+
+.enigma-result h3 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .enigma-detail-card {
+    padding: 1.5rem;
+  }
+  
+  .answer-form {
+    flex-direction: column;
+  }
+  
+  .answer-form input {
+    min-width: unset;
+  }
+}

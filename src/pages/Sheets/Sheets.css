@@ -1,0 +1,35 @@
+/* pages/Sheets/Sheets.css */
+.sheets-page {
+  padding: 2rem 0;
+  min-height: 100vh;
+}
+
+.sheets-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sheets-header p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.view-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.create-btn {
+  background-color: var(--success);
+}
+
+.create-btn:hover {
+  background-color: #2ea043;
+}
+
+.sheets-content {
+  min-height: 500px;
+}

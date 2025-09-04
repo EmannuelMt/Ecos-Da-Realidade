@@ -1,0 +1,49 @@
+/* pages/Enigmas/Enigmas.css */
+.enigmas-page {
+  padding: 2rem 0;
+}
+
+.enigmas-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.enigmas-header p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.view-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.view-btn {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover, .view-btn.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.create-btn {
+  background-color: var(--success);
+}
+
+.create-btn:hover {
+  background-color: #2ea043;
+}
+
+.enigmas-content {
+  min-height: 500px;
+}

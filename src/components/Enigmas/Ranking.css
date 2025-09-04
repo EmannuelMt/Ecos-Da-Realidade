@@ -1,0 +1,89 @@
+/* pages/Enigmas/components/Ranking.css */
+.ranking {
+  padding: 1rem 0;
+}
+
+.ranking-card {
+  background-color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ranking-card h2 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.ranking-card > p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--secondary);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.ranking-item:hover {
+  transform: translateX(5px);
+}
+
+.rank-position {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 40px;
+}
+
+.player-info {
+  flex: 1;
+  text-align: left;
+}
+
+.player-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.player-stats {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.player-badge {
+  font-size: 1.5rem;
+}
+
+.ranking-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.ranking-footer p {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .ranking-card {
+    padding: 1.5rem;
+  }
+  
+  .ranking-item {
+    flex-wrap: wrap;
+  }
+}

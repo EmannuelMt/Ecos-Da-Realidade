@@ -1,0 +1,61 @@
+/* pages/FAQ/FAQ.css */
+.faq-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-categories {
+  margin-bottom: 3rem;
+}
+
+.faq-category {
+  margin-bottom: 2rem;
+}
+
+.faq-category h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.faq-item {
+  background-color: var(--secondary);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.faq-item h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.support-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--secondary);
+  border-radius: 8px;
+}
+
+.support-section h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.support-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.support-btn {
+  min-width: 180px;
+}
