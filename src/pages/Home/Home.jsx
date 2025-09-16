@@ -1,3 +1,4 @@
+// src/pages/Home.jsx
 import React, { useState } from 'react';
 import { 
   FaDiscord, 
@@ -129,10 +130,10 @@ const Home = () => {
             </p>
             <div className="hero-buttons">
               <button className="btn btn-primary">
-                Começar Agora <FaArrowRight />
+                <a href="signup">Criar Conta</a>
               </button>
               <button className="btn btn-secondary">
-                Explorar Recursos
+                <a href="sobre">Saber Mais</a>
               </button>
             </div>
           </div>
@@ -264,7 +265,8 @@ const Home = () => {
               <li>Bloco de notas integrado</li>
             </ul>
             <button className="feature-link">
-              Saiba mais <FaChevronRight />
+              <a href="/mestres">Saiba mais</a>
+              <FaChevronRight />
             </button>
           </div>
           
@@ -280,7 +282,8 @@ const Home = () => {
               <li>Notificações em tempo real</li>
             </ul>
             <button className="feature-link">
-              Saiba mais <FaChevronRight />
+              <a href="/jogadores">Saiba mais</a>
+              <FaChevronRight />
             </button>
           </div>
           
@@ -296,7 +299,8 @@ const Home = () => {
               <li>Comunidade ativa</li>
             </ul>
             <button className="feature-link">
-              Saiba mais <FaChevronRight />
+              <a href="/enigmas">Saiba mais</a>
+              <FaChevronRight />
             </button>
           </div>
         </div>
@@ -559,7 +563,7 @@ const Home = () => {
               <h4>Reportar Problema</h4>
               <p>Encontrou um bug ou tem uma sugestão? Abra um ticket para nossa equipe de suporte te ajudar rapidamente.</p>
               <button className="btn btn-outline">
-                Abrir Ticket
+                <a href="/suporte/abrir-ticket">Abrir Ticket</a>
               </button>
             </div>
             
