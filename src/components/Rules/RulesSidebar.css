@@ -1,0 +1,96 @@
+/* src/pages/Rules/components/RulesSidebar.css */
+.rules-sidebar {
+  background: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.sidebar-header h3 {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background: var(--secondary);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background: var(--accent);
+  color: white;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.nav-label {
+  font-weight: 500;
+}
+
+.sidebar-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.quick-help {
+  text-align: center;
+}
+
+.quick-help h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.quick-help p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.quick-help .btn {
+  width: 100%;
+}
+
+@media (max-width: 968px) {
+  .rules-sidebar {
+    position: static;
+    max-height: none;
+  }
+}

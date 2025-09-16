@@ -1,4 +1,4 @@
-// App.jsx (atualizado)
+// App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import Header from './components/Header/Header';
@@ -15,7 +15,8 @@ import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
 import ForgotPassword from './components/Auth/ForgotPassword';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
-import './styles/global.css';
+import Profile from './pages/Profile/Profile';
+
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
-              
+
               {/* Rotas protegidas */}
               <Route path="/campanhas" element={
                 <ProtectedRoute>
@@ -44,6 +45,11 @@ function App() {
               <Route path="/fichas" element={
                 <ProtectedRoute>
                   <Sheets />
+                </ProtectedRoute>
+              } />
+              <Route path="/perfil" element={
+                <ProtectedRoute>
+                  <Profile />
                 </ProtectedRoute>
               } />
               

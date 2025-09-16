@@ -2,38 +2,50 @@
 import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaGoogle, FaEye, FaEyeSlash, FaEnvelope, FaLock, FaUser, FaDiceD20 } from 'react-icons/fa';
 import './Auth.css';
 
 const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [displayName, setDisplayName] = useState('');
+  const [formData, setFormData] = useState({
+    displayName: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   
   const { signup, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
 
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email || !password || !confirmPassword) {
+    if (!formData.displayName || !formData.email || !formData.password || !formData.confirmPassword) {
       return setError('Por favor, preencha todos os campos');
     }
 
-    if (password !== confirmPassword) {
+    if (formData.password !== formData.confirmPassword) {
       return setError('As senhas não coincidem');
     }
 
-    if (password.length < 6) {
+    if (formData.password.length < 6) {
       return setError('A senha deve ter pelo menos 6 caracteres');
     }
 
     try {
       setError('');
       setLoading(true);
-      await signup(email, password, displayName);
+      await signup(formData.email, formData.password, formData.displayName);
       navigate('/');
     } catch (error) {
       console.error('Erro no cadastro:', error);
@@ -45,11 +57,11 @@ const Signup = () => {
         case 'auth/invalid-email':
           setError('Email inválido');
           break;
-        case 'auth/operation-not-allowed':
-          setError('Operação não permitida');
-          break;
         case 'auth/weak-password':
           setError('Senha muito fraca');
+          break;
+        case 'auth/operation-not-allowed':
+          setError('Operação não permitida');
           break;
         default:
           setError('Falha ao criar conta. Tente novamente.');
@@ -67,68 +79,146 @@ const Signup = () => {
       navigate('/');
     } catch (error) {
       console.error('Erro no login com Google:', error);
-      setError('Falha ao fazer login com Google');
+      if (error.code === 'auth/popup-closed-by-user') {
+        setError('Cadastro com Google cancelado');
+      } else {
+        setError('Falha ao fazer cadastro com Google');
+      }
     } finally {
       setLoading(false);
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   return (
     <div className="auth-container">
+      <div className="auth-background">
+        <div className="auth-particle particle-1"></div>
+        <div className="auth-particle particle-2"></div>
+        <div className="auth-particle particle-3"></div>
+        <div className="auth-glow"></div>
+      </div>
+
       <div className="auth-card">
         <div className="auth-header">
-          <h2>🎭 Juntar-se à Realidade</h2>
-          <p>Crie sua conta para começar sua jornada paranormal</p>
+          <div className="auth-logo">
+            <FaDiceD20 />
+          </div>
+          <h2>Comece sua Jornada</h2>
+          <p>Crie sua conta e entre no universo de Ecos da Realidade</p>
         </div>
 
-        {error && <div className="auth-error">{error}</div>}
+        {error && (
+          <div className="auth-error">
+            <span className="error-icon">⚠️</span>
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
-            <label htmlFor="displayName">Nome de Usuário (Opcional)</label>
-            <input
-              type="text"
-              id="displayName"
-              value={displayName}
-              onChange={(e) => setDisplayName(e.target.value)}
-              placeholder="Como quer ser chamado?"
-            />
+            <label htmlFor="displayName" className="form-label">
+              <FaUser className="input-icon" />
+              Nome de Aventureiro
+            </label>
+            <div className="input-container">
+              <input
+                type="text"
+                id="displayName"
+                name="displayName"
+                value={formData.displayName}
+                onChange={handleChange}
+                placeholder="Seu nome heróico"
+                required
+                className="form-input"
+                disabled={loading}
+              />
+            </div>
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="seu@email.com"
-              required
-            />
+            <label htmlFor="email" className="form-label">
+              <FaEnvelope className="input-icon" />
+              Email
+            </label>
+            <div className="input-container">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="seu@email.com"
+                required
+                className="form-input"
+                disabled={loading}
+              />
+            </div>
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Mínimo 6 caracteres"
-              required
-            />
+            <label htmlFor="password" className="form-label">
+              <FaLock className="input-icon" />
+              Senha
+            </label>
+            <div className="input-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Crie uma senha poderosa (mín. 6 caracteres)"
+                required
+                className="form-input"
+                disabled={loading}
+                minLength={6}
+              />
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="password-toggle"
+                disabled={loading}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
           </div>
 
           <div className="form-group">
-            <label htmlFor="confirmPassword">Confirmar Senha</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Digite a senha novamente"
-              required
-            />
+            <label htmlFor="confirmPassword" className="form-label">
+              <FaLock className="input-icon" />
+              Confirmar Senha
+            </label>
+            <div className="input-container">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                placeholder="Confirme sua senha"
+                required
+                className="form-input"
+                disabled={loading}
+                minLength={6}
+              />
+              <button
+                type="button"
+                onClick={toggleConfirmPasswordVisibility}
+                className="password-toggle"
+                disabled={loading}
+              >
+                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
           </div>
 
           <button 
@@ -136,12 +226,21 @@ const Signup = () => {
             className="btn btn-primary auth-btn"
             disabled={loading}
           >
-            {loading ? 'Criando conta...' : 'Criar Conta'}
+            {loading ? (
+              <span className="btn-loading">
+                <span className="spinner"></span>
+                Criando Conta...
+              </span>
+            ) : (
+              'Iniciar Jornada'
+            )}
           </button>
         </form>
 
         <div className="auth-divider">
-          <span>ou</span>
+          <span className="divider-line"></span>
+          <span className="divider-text">ou continue com</span>
+          <span className="divider-line"></span>
         </div>
 
         <button 
@@ -149,13 +248,13 @@ const Signup = () => {
           className="btn btn-google auth-btn"
           disabled={loading}
         >
-          <span className="google-icon">🔍</span>
+          <FaGoogle className="google-icon" />
           Cadastrar com Google
         </button>
 
         <div className="auth-links">
-          <span>
-            Já tem uma conta? <Link to="/login">Entre aqui</Link>
+          <span className="auth-login">
+            Já tem uma conta? <Link to="/login" className="auth-link">Entre aqui</Link>
           </span>
         </div>
       </div>

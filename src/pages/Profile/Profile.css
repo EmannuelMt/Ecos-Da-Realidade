@@ -1,0 +1,58 @@
+/* src/pages/Profile/Profile.css */
+.profile-page {
+  padding: 2rem 0;
+  min-height: 100vh;
+}
+
+.not-logged-in {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--primary);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.not-logged-in h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.not-logged-in p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.profile-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--primary);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.profile-content {
+  background: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+}

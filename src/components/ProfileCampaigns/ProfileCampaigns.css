@@ -1,0 +1,7 @@
+/* src/pages/Profile/components/ProfileCampaigns/ProfileCampaigns.css */
+.profile-campaigns {
+  padding: 20px;
+  background: var(--secondary);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}

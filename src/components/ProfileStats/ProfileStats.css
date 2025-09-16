@@ -1,0 +1,7 @@
+/* src/pages/Profile/components/ProfileStats/ProfileStats.css */
+.profile-stats {
+  padding: 20px;
+  background: var(--secondary);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
