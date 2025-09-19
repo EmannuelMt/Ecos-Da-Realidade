@@ -67,10 +67,6 @@ const Footer = () => {
   };
 
   const stats = [
-    { icon: FaUsers, value: '5K+', label: 'Jogadores' },
-    { icon: GiCampfire, value: '1.2K+', label: 'Campanhas' },
-    { icon: FaFileAlt, value: '8K+', label: 'Fichas' },
-    { icon: FaPuzzlePiece, value: '500+', label: 'Enigmas' }
   ];
 
   return (

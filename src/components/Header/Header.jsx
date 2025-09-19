@@ -243,8 +243,7 @@ const Header = () => {
       '/': <FaHome />,
       '/campanhas': <GiCampfire />,
       '/enigmas': <FaPuzzlePiece />,
-      '/fichas': <FaFileAlt />,
-      '/regras': <GiSpellBook />,
+      '/fichas': <FaFileAlt />,     
       '/discord': <FaDiscord />,
       '/sobre': <FaInfoCircle />
     };
@@ -256,7 +255,6 @@ const Header = () => {
     { to: '/campanhas', text: 'Campanhas' },
     { to: '/enigmas', text: 'Enigmas', badge: 'Novo' },
     { to: '/fichas', text: 'Fichas' },
-    { to: '/regras', text: 'Regras' }
   ];
 
   const navLinksSecondary = [

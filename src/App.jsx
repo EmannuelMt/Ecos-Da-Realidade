@@ -7,7 +7,6 @@ import Home from './pages/Home/Home';
 import Campaigns from './pages/Campaigns/Campaigns';
 import Enigmas from './pages/Enigmas/Enigmas';
 import Sheets from './pages/Sheets/Sheets';
-import Rules from './pages/Rules/Rules';
 import Discord from './pages/Discord/Discord';
 import FAQ from './pages/FAQ/FAQ';
 import About from './pages/About/About';
@@ -54,7 +53,6 @@ function App() {
               } />
               
               {/* Rotas públicas */}
-              <Route path="/regras" element={<Rules />} />
               <Route path="/discord" element={<Discord />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/sobre" element={<About />} />
